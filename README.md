@@ -23,7 +23,7 @@ MiniMax is ~20x cheaper than Opus for coding tasks.
 
 - Windows 10 or 11
 - [Claude Desktop for Windows](https://claude.ai/download) installed
-- Python 3.8 or above — check by opening Command Prompt and running:
+- Python 3.8 or above — check by opening PowerShell and running:
   ```
   python --version
   ```
@@ -33,21 +33,21 @@ MiniMax is ~20x cheaper than Opus for coding tasks.
 
 ---
 
-## Step 1 — Open Command Prompt
+## Step 1 — Open PowerShell
 
-Press `Windows + R`, type `cmd`, hit Enter.
+Press `Windows + R`, type `powershell`, hit Enter.
 
 ---
 
 ## Step 2 — Clone this repo
 
-```cmd
+```powershell
 git clone https://github.com/nitinkore-sn/minimax-mcp-windows.git
 ```
 
 Move into the folder:
 
-```cmd
+```powershell
 cd minimax-mcp-windows
 ```
 
@@ -55,7 +55,7 @@ cd minimax-mcp-windows
 
 ## Step 3 — Install dependencies
 
-```cmd
+```powershell
 pip install "mcp[cli]" httpx
 ```
 
@@ -65,8 +65,8 @@ pip install "mcp[cli]" httpx
 
 Run this and copy the output — you'll need it in the next step:
 
-```cmd
-cd
+```powershell
+pwd
 ```
 
 It'll print something like `C:\Users\yourname\minimax-mcp-windows`. Copy that.
@@ -81,10 +81,10 @@ The Claude Desktop config file lives here:
 C:\Users\yourname\AppData\Roaming\Claude\claude_desktop_config.json
 ```
 
-Quickest way to open it — paste this into Command Prompt:
+Quickest way to open it — paste this into PowerShell:
 
-```cmd
-notepad "%APPDATA%\Claude\claude_desktop_config.json"
+```powershell
+notepad "$env:APPDATA\Claude\claude_desktop_config.json"
 ```
 
 > If the file doesn't exist yet, Notepad will ask to create it — click **Yes**.
@@ -121,12 +121,12 @@ Save the file (`Ctrl + S`).
 
 This tells Claude when to use MiniMax vs handle things itself.
 
-**How to open Custom Instructions:**
+**How to add Custom Instructions:**
 1. Open Claude Desktop
 2. Click your **profile icon** (bottom-left corner)
 3. Click **Settings**
-4. Click **Custom Instructions** in the left sidebar
-5. Paste the text below and click **Save**
+4. Look for a text box labelled **Custom Instructions** on the settings page
+5. Paste the text below into that box and click **Save**
 
 ```
 ROUTING RULES — follow strictly:
@@ -180,10 +180,10 @@ Claude will call the MiniMax tool and return the code.
 ## Troubleshooting
 
 **"python is not recognized as an internal or external command"**
-→ Python is not on your PATH. Reinstall from [python.org](https://python.org/downloads) and check **"Add Python to PATH"** during setup. Then restart Command Prompt.
+→ Python is not on your PATH. Reinstall from [python.org](https://python.org/downloads) and check **"Add Python to PATH"** during setup. Then restart PowerShell.
 
 **"ModuleNotFoundError: mcp"**
-→ Run `pip install "mcp[cli]" httpx` again in Command Prompt
+→ Run `pip install "mcp[cli]" httpx` again in PowerShell
 
 **MiniMax tools not showing in Claude Desktop**
 → Double-check the path in the config uses double backslashes `\\`
@@ -194,7 +194,7 @@ Claude will call the MiniMax tool and return the code.
 → Make sure you saved the config file before restarting
 
 **"No such file or directory" error in Claude Desktop logs**
-→ The path in the config doesn't match where you cloned the repo. Re-run `cd` in Command Prompt inside the folder to get the exact path.
+→ The path in the config doesn't match where you cloned the repo. Re-run `pwd` in PowerShell inside the folder to get the exact path.
 
 ---
 
