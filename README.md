@@ -98,7 +98,7 @@ Paste this into the file (replace the placeholders):
     "minimax": {
       "command": "python",
       "args": [
-        "C:\\Users\\yourname\\minimax-mcp-windows\\server.py"
+        "C:/Users/yourname/minimax-mcp-windows/server.py"
       ],
       "env": {
         "MINIMAX_API_KEY": "paste-your-sambanova-key-here",
@@ -111,7 +111,7 @@ Paste this into the file (replace the placeholders):
 ```
 
 > **Important:**
-> - Replace `C:\\Users\\yourname\\minimax-mcp-windows\\server.py` with the path from Step 4. Use **double backslashes** `\\` in the path.
+> - Replace `C:/Users/yourname/minimax-mcp-windows/server.py` with the path from Step 4. Use **forward slashes** `/` in the path (not backslashes).
 > - Replace `paste-your-sambanova-key-here` with your actual SambaNova API key.
 
 Save the file (`Ctrl + S`).
@@ -187,7 +187,7 @@ Claude will call the MiniMax tool and return the code.
 → Run `pip install "mcp[cli]" httpx` again in PowerShell
 
 **MiniMax tools not showing in Claude Desktop**
-→ Double-check the path in the config uses double backslashes `\\`
+→ Double-check the path in the config uses forward slashes `/` not backslashes
 → Make sure you fully quit Claude Desktop (Step 7) and reopened it
 
 **API error / authentication failed**
